@@ -37,19 +37,18 @@ En el campo de la robótica y el control de sistemas dinámicos, los controlador
 
 ## Soluciones  
 
-- Para la reproduccion del listerner y el talker.py se modificaron los archivos launch para poder ejecutar los archivos con la terminal en Ros, tambien para esto se ejecutaron simultaniamente los dos archivos para poder tener un buen funcionamiento y se pudiera escuchar y hablar.
-  
-- Para el nivel medio se realizo un codigo en el cual se ejecutaban movimientos para que la tortuga se moviera de acuerdo lo escrito en el codigo y girar mediante los angulos dados y repitiendolo varias veces para poder realizar el triangulo y el cubo, se realizan de manera aleatoria las lineas debido a que no hay controlador y lo unico que conoce el simulador es su posicion inicial y los movimientos del codigo. Para comtrolar la tortuga se hizo un codigo en el cual podiamos mover la tortuga en diferentes direcciones con el teclado sabiendo la posicion de la tortuga y indicando la accion de cada tecla como lo es ir hacia adelante, atras, izquierda y derecha.
+- Se realizaron ajustes en los archivos de lanzamiento para facilitar la ejecución de los scripts listener y talker en ROS a través de la terminal. Ambos archivos se ejecutaron simultáneamente para garantizar un buen funcionamiento, permitiendo la comunicación de audio bidireccional.
 
-- Para los controladores se hicieron tres codigos los cuales se pide una coordenada en x, otra coordenada en y y el angulo en el que se requiere que la tortuga se mueva, haciendo yn recorrido a la posicion deseada con el angulo requerido asi para los diferentes controladores P, PI y PID.
+-En cuanto al nivel medio, se desarrolló un código que controla los movimientos de una tortuga en el entorno de simulación, permitiendo que se desplace según lo especificado en el código y rote en ángulos predeterminados. Esto se repitió varias veces para crear figuras geométricas como un triángulo y un cubo. Dado que no hay un controlador específico, las líneas de los movimientos son aleatorias, con la única referencia de la posición inicial y los movimientos codificados.
 
-**Los codigos se encuentran en la carpeta de lab2 que esta añadida en el documento.**
+Para interactuar con la tortuga, se implementó un código que permite al usuario moverla en diferentes direcciones utilizando el teclado, con instrucciones claras sobre cómo avanzar, retroceder, girar a la izquierda y a la derecha, teniendo en cuenta la posición actual de la tortuga.
 
+En cuanto a los controladores, se desarrollaron tres códigos que solicitan coordenadas en el eje x y en el eje y, así como el ángulo de orientación deseado para la tortuga. Estos códigos permiten que la tortuga se desplace hacia la posición deseada con el ángulo especificado, utilizando diferentes estrategias de control como proporcional (P), proporcional-integral (PI) y proporcional-integral-derivativo (PID).
+
+**Los codigos se encuentran en la carpetas que esta añadida en el documento.**
     
 ## Conclusiones
 
 Los fundamentos de ROS se estudiaron en este laboratorio, así como las prácticas básicas y avanzadas de control de sistemas robóticos simulados. Todos los ejercicios requeridos se realizaron correctamente, lo que permitió reconocer y comprender los diferentes tipos de controladores, incluidos los controladores Proporcional (P), Proporcional-Integral (PI) y Proporcional-Integral-Derivativo (PID).
 
 La ejecución exitosa de los ejercicios demostró que el equipo tenía la capacidad de aplicar la teoría del control a la práctica en un entorno de simulación robótica. La comprensión de los principios de los controladores y su aplicación en ROS establece una base sólida para futuros proyectos y desarrollos en el campo de la robótica y la automatización.
-
-Este laboratorio brindó una oportunidad importante para explorar las capacidades de ROS y mejorar las habilidades en el diseño, desarrollo y control de sistemas robóticos. Los estudiantes están mejor preparados para enfrentar desafíos más complejos en el futuro al desarrollar soluciones robóticas innovadoras y eficientes.
