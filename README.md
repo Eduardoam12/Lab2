@@ -19,12 +19,10 @@ En el campo de la robótica y el control de sistemas dinámicos, los controlador
 ## Problemas
 
 - **Basic**
-- Crear un paquete llamado Practicas_lab de ros con dependencias rospy, roscpp y std_msgs
 - Colocar los archivos listener.py y talker.py
 - Compilar el paquete.
 - Ejecutar el talker
 - Ejecutar el listener
-- Concluir sobre su funcionamiento.
   
 - **Medium**
 - Crear un control por teclado para turtlesim
@@ -43,8 +41,7 @@ En el campo de la robótica y el control de sistemas dinámicos, los controlador
 
 Para interactuar con la tortuga, se implementó un código que permite al usuario moverla en diferentes direcciones utilizando el teclado, con instrucciones claras sobre cómo avanzar, retroceder, girar a la izquierda y a la derecha, teniendo en cuenta la posición actual de la tortuga.
 
-En cuanto a los controladores, se desarrollaron tres códigos que solicitan coordenadas en el eje x y en el eje y, así como el ángulo de orientación deseado para la tortuga. Estos códigos permiten que la tortuga se desplace hacia la posición deseada con el ángulo especificado, utilizando diferentes estrategias de control como proporcional (P), proporcional-integral (PI) y proporcional-integral-derivativo (PID).
-
+Por falta de tiempo y organizacion se logro solo hacer del nivel avanzado solo el primer controlador (P).
 **Los codigos se encuentran en la carpetas que esta añadida en el documento.**
     
 ## Conclusiones
