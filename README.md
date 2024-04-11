@@ -10,11 +10,11 @@ En el campo de la robótica y el control de sistemas dinámicos, los controlador
 
 ## Controladores PI, P y PID
 
-- **Controlador Proporcional (P)**: El controlador proporcional es el más simple de los tres, y su acción se basa únicamente en el error presente entre la salida deseada y la salida real del sistema. El controlador P ajusta la señal de control proporcionalmente al error, lo que significa que cuanto mayor sea el error, mayor será la corrección aplicada. Sin embargo, este controlador puede resultar en oscilaciones alrededor del punto de ajuste deseado y no garantiza la estabilidad del sistema.
+- **Controlador Proporcional (P)**: El controlador proporcional es el más simple de los tres, y su acción se basa únicamente en el error presente entre la salida deseada y la salida real del sistema. El controlador P ajusta la señal de control proporcionalmente al error, lo que significa que cuanto mayor sea el error, mayor será la corrección aplicada.
 
-- **Controlador Proporcional-Integral (PI)**: El controlador PI agrega una componente integral al controlador proporcional. Esta componente integral tiene en cuenta el historial completo de los errores pasados y ajusta la señal de control para eliminar el error acumulado. El controlador PI es capaz de eliminar el error en estado estacionario y mejorar la estabilidad del sistema, pero puede provocar una respuesta lenta a cambios repentinos en la referencia.
+- **Controlador Proporcional-Integral (PI)**: El controlador PI agrega una componente integral al controlador proporcional. Esta componente integral tiene en cuenta el historial completo de los errores pasados y ajusta la señal de control para eliminar el error acumulado.
 
-- **Controlador Proporcional-Integral-Derivativo (PID)**: El controlador PID combina las acciones proporcional, integral y derivativa para proporcionar un control más completo y preciso del sistema. La componente derivativa anticipa la tendencia del error y proporciona una respuesta rápida a cambios en la referencia. Esto ayuda a mejorar la estabilidad y la respuesta dinámica del sistema, reduciendo el tiempo de respuesta y minimizando el sobrepico. El controlador PID es el más utilizado en aplicaciones industriales debido a su capacidad para controlar una amplia gama de sistemas con diferentes características dinámicas.
+- **Controlador Proporcional-Integral-Derivativo (PID)**: El controlador PID combina las acciones proporcional, integral y derivativa para proporcionar un control más completo y preciso del sistema. La componente derivativa anticipa la tendencia del error y proporciona una respuesta rápida a cambios en la referencia. Esto ayuda a mejorar la estabilidad y la respuesta dinámica del sistema, reduciendo el tiempo de respuesta y minimizando el sobrepico.
 
 ## Problemas
 
