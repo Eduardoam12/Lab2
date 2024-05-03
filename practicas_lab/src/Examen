@@ -1,0 +1,83 @@
+#!/usr/bin/env python
+
+import rospy
+from geometry_msgs.msg import Twist
+import math
+
+def move_turtle(turtle_pub, linear_speed, angular_speed, duration):
+    twist = Twist()
+    twist.linear.x = linear_speed
+    twist.angular.z = angular_speed
+
+    start_time = rospy.Time.now()
+    while rospy.Time.now() - start_time < rospy.Duration.from_sec(duration):
+        turtle_pub.publish(twist)
+        rospy.sleep(0.1)
+
+def draw_U(turtle_pub):
+    move_turtle(turtle_pub, 1.0, 0.0, 2.0)  # Move forward
+    move_turtle(turtle_pub, 0.0, math.pi/2, 1.0)  # Turn right
+    move_turtle(turtle_pub, 1.0, 0.0, 2.0)  # Move forward
+
+def draw_D(turtle_pub):
+    move_turtle(turtle_pub, 1.0, 0.0, 2.0)  # Move forward
+    move_turtle(turtle_pub, 0.0, -math.pi/2, 1.0)  # Turn left
+    move_turtle(turtle_pub, 1.0, 0.0, 1.0)  # Move forward
+    move_turtle(turtle_pub, 0.0, math.pi/2, 1.0)  # Turn right
+    move_turtle(turtle_pub, 1.0, 0.0, 1.0)  # Move forward
+
+def draw_L(turtle_pub):
+    move_turtle(turtle_pub, 1.0, 0.0, 2.0)  # Move forward
+    move_turtle(turtle_pub, 0.0, math.pi/2, 1.0)  # Turn right
+
+def draw_A(turtle_pub):
+    move_turtle(turtle_pub, 1.0, 0.0, 2.0)  # Move forward
+    move_turtle(turtle_pub, 0.0, -math.pi/2, 0.5)  # Turn left slightly
+    move_turtle(turtle_pub, 1.0, 0.0, 1.0)  # Move forward
+    move_turtle(turtle_pub, 0.0, -math.pi/2, 0.5)  # Turn left slightly
+    move_turtle(turtle_pub, 1.0, 0.0, 1.0)  # Move forward
+
+def draw_P(turtle_pub):
+    move_turtle(turtle_pub, 1.0, 0.0, 2.0)  # Move forward
+    move_turtle(turtle_pub, 0.0, math.pi/2, 0.5)  # Turn right slightly
+    move_turtle(turtle_pub, 1.0, 0.0, 1.0)  # Move forward
+    move_turtle(turtle_pub, 0.0, math.pi/2, 0.5)  # Turn right slightly
+    move_turtle(turtle_pub, 0.0, math.pi/2, 0.5)  # Turn right slightly
+
+def disappear_turtle(turtle_pub):
+    twist = Twist()
+    turtle_pub.publish(twist)  # Publish an empty message to stop the turtle
+
+def main():
+    rospy.init_node('draw_udlap')
+    turtle1_pub = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size=10)
+    turtle2_pub = rospy.Publisher('/turtle2/cmd_vel', Twist, queue_size=10)
+    turtle3_pub = rospy.Publisher('/turtle3/cmd_vel', Twist, queue_size=10)
+    turtle4_pub = rospy.Publisher('/turtle4/cmd_vel', Twist, queue_size=10)
+    turtle5_pub = rospy.Publisher('/turtle5/cmd_vel', Twist, queue_size=10)
+    turtle6_pub = rospy.Publisher('/turtle6/cmd_vel', Twist, queue_size=10)
+    turtle7_pub = rospy.Publisher('/turtle7/cmd_vel', Twist, queue_size=10)
+    turtle8_pub = rospy.Publisher('/turtle8/cmd_vel', Twist, queue_size=10)
+    rospy.sleep(1.0)  # Wait for publishers to initialize
+
+    draw_U(turtle1_pub)
+    draw_D(turtle2_pub)
+    draw_L(turtle3_pub)
+    draw_A(turtle4_pub)
+    draw_P(turtle5_pub)
+
+    # Disappear turtles after completing their tasks
+    disappear_turtle(turtle1_pub)
+    disappear_turtle(turtle2_pub)
+    disappear_turtle(turtle3_pub)
+    disappear_turtle(turtle4_pub)
+    disappear_turtle(turtle5_pub)
+    # You can do the same for turtles 6 to 8 if needed
+
+    rospy.spin()
+
+if name == '_main_':
+    try:
+        main()
+    except rospy.ROSInterruptException:
+        pass
